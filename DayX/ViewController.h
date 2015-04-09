@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+static NSString *const entryKey = @"entry";
+static NSString *const titleKey = @"title";
+static NSString *const bodyTextKey = @"bodytext";
 
 @interface ViewController : UIViewController
+
 
 
 @end
