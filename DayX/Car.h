@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString * const yearKey =@"2000";
+static NSString * const makeKey =@"Toyota";
+static NSString * const modelKey =@"Rav-4";
+
 @interface Car : NSObject
+
+@property (strong, nonatomic) NSString *year;
+@property (strong, nonatomic) NSString *make;
+@property (strong, nonatomic) NSString *model;
+
+
 
 @end

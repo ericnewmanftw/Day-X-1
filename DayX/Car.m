@@ -10,4 +10,15 @@
 
 @implementation Car
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        self.make = dictionary[makeKey];
+        self.model = dictionary[modelKey];
+        self.year = dictionary[yearKey];
+    }
+    return self;
+}
+
 @end

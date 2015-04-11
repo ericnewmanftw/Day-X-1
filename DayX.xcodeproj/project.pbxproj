@@ -14,6 +14,11 @@
 		2CBD648B1AD4C84100AD7ED6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD648A1AD4C84100AD7ED6 /* Images.xcassets */; };
 		2CBD648E1AD4C84100AD7ED6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD648C1AD4C84100AD7ED6 /* LaunchScreen.xib */; };
 		2CBD649A1AD4C84200AD7ED6 /* DayXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD64991AD4C84200AD7ED6 /* DayXTests.m */; };
+		9B56FEA11AD98B2000E4F5B5 /* DXListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B56FEA01AD98B2000E4F5B5 /* DXListDataSource.m */; };
+		9B56FEA41AD98BDA00E4F5B5 /* DXListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B56FEA31AD98BDA00E4F5B5 /* DXListViewController.m */; };
+		9B56FEA71AD9971A00E4F5B5 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B56FEA61AD9971A00E4F5B5 /* EntryController.m */; };
+		9B9F6D541AD758CD00B2B126 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F6D531AD758CD00B2B126 /* Entry.m */; };
+		9B9F6D571AD75B9800B2B126 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F6D561AD75B9800B2B126 /* Car.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,16 @@
 		2CBD64931AD4C84200AD7ED6 /* DayXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBD64981AD4C84200AD7ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CBD64991AD4C84200AD7ED6 /* DayXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayXTests.m; sourceTree = "<group>"; };
+		9B56FE9F1AD98B2000E4F5B5 /* DXListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXListDataSource.h; sourceTree = "<group>"; };
+		9B56FEA01AD98B2000E4F5B5 /* DXListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXListDataSource.m; sourceTree = "<group>"; };
+		9B56FEA21AD98BDA00E4F5B5 /* DXListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXListViewController.h; sourceTree = "<group>"; };
+		9B56FEA31AD98BDA00E4F5B5 /* DXListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXListViewController.m; sourceTree = "<group>"; };
+		9B56FEA61AD9971A00E4F5B5 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
+		9B56FEA81AD998B900E4F5B5 /* EntryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
+		9B9F6D521AD758CD00B2B126 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		9B9F6D531AD758CD00B2B126 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		9B9F6D551AD75B9800B2B126 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		9B9F6D561AD75B9800B2B126 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +100,17 @@
 				2CBD64821AD4C84100AD7ED6 /* AppDelegate.m */,
 				2CBD64841AD4C84100AD7ED6 /* ViewController.h */,
 				2CBD64851AD4C84100AD7ED6 /* ViewController.m */,
+				9B9F6D521AD758CD00B2B126 /* Entry.h */,
+				9B9F6D531AD758CD00B2B126 /* Entry.m */,
+				9B56FEA81AD998B900E4F5B5 /* EntryController.h */,
+				9B56FEA61AD9971A00E4F5B5 /* EntryController.m */,
+				9B9F6D551AD75B9800B2B126 /* Car.h */,
+				9B9F6D561AD75B9800B2B126 /* Car.m */,
 				2CBD64871AD4C84100AD7ED6 /* Main.storyboard */,
+				9B56FEA21AD98BDA00E4F5B5 /* DXListViewController.h */,
+				9B56FEA31AD98BDA00E4F5B5 /* DXListViewController.m */,
+				9B56FE9F1AD98B2000E4F5B5 /* DXListDataSource.h */,
+				9B56FEA01AD98B2000E4F5B5 /* DXListDataSource.m */,
 				2CBD648A1AD4C84100AD7ED6 /* Images.xcassets */,
 				2CBD648C1AD4C84100AD7ED6 /* LaunchScreen.xib */,
 				2CBD647D1AD4C84100AD7ED6 /* Supporting Files */,
@@ -219,9 +244,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B56FEA41AD98BDA00E4F5B5 /* DXListViewController.m in Sources */,
+				9B9F6D571AD75B9800B2B126 /* Car.m in Sources */,
+				9B9F6D541AD758CD00B2B126 /* Entry.m in Sources */,
 				2CBD64861AD4C84100AD7ED6 /* ViewController.m in Sources */,
 				2CBD64831AD4C84100AD7ED6 /* AppDelegate.m in Sources */,
+				9B56FEA71AD9971A00E4F5B5 /* EntryController.m in Sources */,
 				2CBD64801AD4C84100AD7ED6 /* main.m in Sources */,
+				9B56FEA11AD98B2000E4F5B5 /* DXListDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +442,7 @@
 				2CBD649F1AD4C84200AD7ED6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2CBD64A01AD4C84200AD7ED6 /* Build configuration list for PBXNativeTarget "DayXTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +451,7 @@
 				2CBD64A21AD4C84200AD7ED6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

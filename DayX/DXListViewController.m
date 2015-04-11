@@ -8,7 +8,7 @@
 
 #import "DXListViewController.h"
 
-@interface DXListViewController ()
+@interface DXListViewController () <UITableViewDelegate>
 
 @end
 
@@ -22,6 +22,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addEntry:(id)sender {
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
 /*

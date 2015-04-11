@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Entry.h"
 
 @interface EntryController : NSObject
 
 +(EntryController *) sharedInstance;
 
-+(NSMutableArray *)loadEntriesFromDefaults;
-+(void)storeEntriesInDefaults:(NSArray *)entries;
+@property (nonatomic, strong) NSArray *entries;
+
 
 @end

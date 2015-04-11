@@ -8,12 +8,19 @@
 
 #import "ViewController.h"
 
+#import "EntryController.h"
+
 
 
 
 @interface ViewController () <UITextViewDelegate, UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UITextView *otherText;
+@property (nonatomic, strong) IBOutlet UIButton *clearButton;
+
+@property (nonatomic, strong) Entry *entry;
+
 
 @end
 
@@ -21,42 +28,68 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.textField.delegate = self;
     self.otherText.delegate = self;
     
-    NSDictionary *entry = [[NSUserDefaults standardUserDefaults] objectForKey:entryKey];
-    [self updateViewWithDictionary:entry];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
+    
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
+    //TODO : Take this code out when you implement the list.
+    
+    self.entry = [EntryController sharedInstance].entries.firstObject;
+    
+    [self updateWithTitle:self.entry.title body:self.entry.bodyText];
+    
+    
+    //Don't need this anymore since it was added to our Entry file
+//    NSDictionary *entry = [[NSUserDefaults standardUserDefaults] objectForKey:entryKey];
+//    [self updateViewWithDictionary:entry];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void) save: (id) sender {
-    NSDictionary *entry = @{titleKey:self.textField.text, bodyTextKey:self.otherText.text};
-    [[NSUserDefaults standardUserDefaults] setObject:entry forKey:entryKey];
+-(void)updateWithTitle:(NSString *)title body:(NSString *)body {
+    self.textField.text = title;
+    self.otherText.text = body;
+}
+
+- (IBAction)save: (id) sender {
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (!self.entry) {
+        self.entry = [Entry new];
+                      self.entry.title = self.textField.text;
+                      self.entry.bodyText = self.otherText.text;
+                      
+    }
+    
 }
 
-- (void) updateViewWithDictionary: (NSDictionary *) dictionary
-{
-    self.textField.text = dictionary[titleKey];
-    self.otherText.text = dictionary[bodyTextKey];
-}
+//No longer required.
+//- (void) updateViewWithDictionary: (NSDictionary *) dictionary
+//{
+//    self.textField.text = dictionary[titleKey];
+//    self.otherText.text = dictionary[bodyTextKey];
+//}
 
-- (IBAction)buttonTapped:(id)sender {
+- (IBAction)clear:(id)sender {
       self.textField.text = @"";
     self.otherText.text = @"";
+    
+    [self save:sender];
+    
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    [self save:self.textField];
+    [self save:textView];
 }
 
-- (void)textFieldDidEndEditing:(UITextView *)textView {
-    [self save:self.textField];
+- (void)textFieldDidEndEditing:(UITextView *)textField {
+    [self save:textField];
 }
 
 
-- (BOOL) textFieldShouldReturn: (UITextField *) textField {
+- (BOOL) textFieldShouldReturn: (UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
