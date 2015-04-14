@@ -18,7 +18,6 @@
 		9B56FEA41AD98BDA00E4F5B5 /* DXListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B56FEA31AD98BDA00E4F5B5 /* DXListViewController.m */; };
 		9B56FEA71AD9971A00E4F5B5 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B56FEA61AD9971A00E4F5B5 /* EntryController.m */; };
 		9B9F6D541AD758CD00B2B126 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F6D531AD758CD00B2B126 /* Entry.m */; };
-		9B9F6D571AD75B9800B2B126 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F6D561AD75B9800B2B126 /* Car.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +52,6 @@
 		9B56FEA81AD998B900E4F5B5 /* EntryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
 		9B9F6D521AD758CD00B2B126 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		9B9F6D531AD758CD00B2B126 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
-		9B9F6D551AD75B9800B2B126 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		9B9F6D561AD75B9800B2B126 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +101,6 @@
 				9B9F6D531AD758CD00B2B126 /* Entry.m */,
 				9B56FEA81AD998B900E4F5B5 /* EntryController.h */,
 				9B56FEA61AD9971A00E4F5B5 /* EntryController.m */,
-				9B9F6D551AD75B9800B2B126 /* Car.h */,
-				9B9F6D561AD75B9800B2B126 /* Car.m */,
 				2CBD64871AD4C84100AD7ED6 /* Main.storyboard */,
 				9B56FEA21AD98BDA00E4F5B5 /* DXListViewController.h */,
 				9B56FEA31AD98BDA00E4F5B5 /* DXListViewController.m */,
@@ -245,7 +240,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B56FEA41AD98BDA00E4F5B5 /* DXListViewController.m in Sources */,
-				9B9F6D571AD75B9800B2B126 /* Car.m in Sources */,
 				9B9F6D541AD758CD00B2B126 /* Entry.m in Sources */,
 				2CBD64861AD4C84100AD7ED6 /* ViewController.m in Sources */,
 				2CBD64831AD4C84100AD7ED6 /* AppDelegate.m in Sources */,

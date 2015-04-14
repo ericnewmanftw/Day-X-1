@@ -10,6 +10,8 @@
 
 @interface EntryController ()
 
+@property (nonatomic, strong) NSArray *entries;
+
 
 @end
 
@@ -22,11 +24,36 @@
         sharedInstance = [[EntryController alloc] init];
         
         [sharedInstance loadEntriesFromDefaults];
-        
     });
     return sharedInstance;
 }
 
+-(void)addEntry:(Entry *)entry {
+    if (!entry) {
+        return;
+    
+    }
+    NSMutableArray *mutableEntries = [[NSMutableArray alloc] initWithArray:self.entries];
+    [mutableEntries addObject:entry];
+    
+    self.entries = mutableEntries;
+    
+    [self sychronize];
+    
+    
+}
+
+-(void)removeEntry:(Entry *)entry {
+    
+}
+
+-(void)replaceEntry:(Entry *)oldEntry withEntry:(Entry *)newEntry {
+    
+}
+
+
+
+// We shouldn't need these just yet, but I'll uncomment them when / if we do.
 - (void)loadEntriesFromDefaults {
     
     NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:entriesKey];
@@ -42,14 +69,16 @@
     
 }
 
-- (void)storeEntriesInDefaults:(NSArray *)entries
+- (void)sychronize
 {
     NSMutableArray *arrayOfEntryDictionaries;
     
-    for (Entry *entry in entries) {
+    for (Entry *entry in self.entries) {
         [arrayOfEntryDictionaries addObject:[entry entryDictionary]];
     }
     [[NSUserDefaults standardUserDefaults] setObject:arrayOfEntryDictionaries forKey:entriesKey];
+    
+    [[NSUserDefaults standardUserDefaults]synchronize];
     
 }
 

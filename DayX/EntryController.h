@@ -13,7 +13,11 @@
 
 +(EntryController *) sharedInstance;
 
-@property (nonatomic, strong) NSArray *entries;
+@property (nonatomic, readonly) NSArray *entries;
+
+- (void)addEntry:(Entry *)entry;
+- (void)removeEntry:(Entry *)entry;
+- (void)replaceEntry:(Entry *)oldEntry withEntry:(Entry *)newEntry;
 
 
 @end

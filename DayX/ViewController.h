@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class Entry;
 
+static NSString * const EntryKey = @"entry";
 
 @interface ViewController : UIViewController
 
-
+- (void)updateWithEntry:(Entry *)entry;
 
 
 @end
+
+
 

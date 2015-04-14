@@ -26,11 +26,21 @@
 
 @implementation ViewController
 
+-(void)updateWithEntry:(Entry *)entry {
+    self.entry = entry;
+    
+    self.textField.text = entry.title;
+    self.otherText.text = entry.bodyText;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.textField.delegate = self;
     self.otherText.delegate = self;
+    
+    self.textField.text = self.entry.title;
+    self.otherText.text = self.entry.bodyText;
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
     
@@ -38,9 +48,9 @@
     
     //TODO : Take this code out when you implement the list.
     
-    self.entry = [EntryController sharedInstance].entries.firstObject;
+  //  self.entry = [EntryController sharedInstance].entries.firstObject;
     
-    [self updateWithTitle:self.entry.title body:self.entry.bodyText];
+ //   [self updateWithTitle:self.entry.title body:self.entry.bodyText];
     
     
     //Don't need this anymore since it was added to our Entry file
@@ -54,16 +64,20 @@
     self.otherText.text = body;
 }
 
-- (IBAction)save: (id) sender {
+- (IBAction)save:(id)sender {
     
-    if (!self.entry) {
-        self.entry = [Entry new];
-                      self.entry.title = self.textField.text;
-                      self.entry.bodyText = self.otherText.text;
-                      
+    Entry *entry = [[Entry alloc] initWithDictionary:@{titleKey: self.textField.text, textKey: self.otherText.text}];
+    
+    if (self.entry) {
+        [[EntryController sharedInstance] replaceEntry:self.entry withEntry:entry];
+    } else {
+        [[EntryController sharedInstance] addEntry:entry];
     }
     
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
+
 
 //No longer required.
 //- (void) updateViewWithDictionary: (NSDictionary *) dictionary
@@ -81,11 +95,11 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    [self save:textView];
+   // [self save:textView];
 }
 
 - (void)textFieldDidEndEditing:(UITextView *)textField {
-    [self save:textField];
+   // [self save:textField];
 }
 
 
